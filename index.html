@@ -15,18 +15,18 @@ color:#333;
 
 /* ===== ヘッダー ===== */
 .header{
-background:#fff;
+background:#f3f3f3;
 display:flex;
 justify-content:space-between;
 align-items:center;
-height:68px;
-padding:0 18px;
+height:79px;
 border-bottom:1px solid #e6e6e6;
 }
 
 .logo-area{
 display:flex;
 align-items:center;
+margin-left:20px;
 }
 
 /* ロゴ縦構造 */
@@ -73,17 +73,37 @@ color:#bbb;
 margin-right:16px;
 }
 
-.menu{
-background:#1b8fb9;
-color:#fff;
-height:100%;
-display:flex;
-align-items:center;
-padding:0 20px;
-font-size:13px;
-letter-spacing:1px;
-font-weight:600;
+.menu {
+background: #2e8baa;
+color: white;
+height: 80px;
+width: 120px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 8px;
+font-weight: 600;
+letter-spacing: 2px;
 }
+
+.hamburger {
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+
+.hamburger span {
+width: 24px;
+height: 2px;
+background: white;
+display: block;
+}
+
+.menu-text {
+font-size: 14px;
+}
+
 
 /* ===== 黒バー ===== */
 .title-bar{
@@ -198,7 +218,14 @@ MOBILE
 
 <div class="right-area">
 <div class="mail">✉</div>
-<div class="menu">MENU</div>
+<div class="menu">
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="menu-text">MENU</div>
+</div>
 </div>
 </div>
 
