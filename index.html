@@ -5,11 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MY PAGE</title>
 
+<!-- ★ フォント読み込み -->
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 body{
 margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
-background:#f2f2f2;
+font-family:"Oswald",sans-serif;
+background:#f3f3f3;
 color:#333;
 }
 
@@ -26,21 +29,22 @@ border-bottom:1px solid #e6e6e6;
 .logo-area{
 display:flex;
 align-items:center;
-margin-left:20px;
+margin-left:12px;
 }
 
 /* ロゴ縦構造 */
 .logo-wrap{
 display:flex;
 flex-direction:column;
-align-items:center;
+align-items:flex-start;
 margin-right:14px;
 }
 
-/* ===== 太さ強化ロゴ ===== */
+/* ロゴマーク */
 .bts-mark{
 height:40px;
 width:auto;
+margin-left:5.5px;
 }
 
 /* BTS文字 */
@@ -48,16 +52,18 @@ width:auto;
 font-size:10px;
 letter-spacing:6px;
 margin-top:2px;
-font-weight:700;
+font-weight:500;
 }
 
-/* 右文字 */
+/* JAPAN OFFICIAL MOBILE */
 .logo-text{
-font-size:11px;
-letter-spacing:3px;
-line-height:1.15;
-font-weight:700;
-color:#000;
+font-family:'Oswald',sans-serif;
+font-size:12px;
+letter-spacing:4px; /* 広げる */
+line-height:1.4;
+font-weight:500; /* 細く */
+margin-left:1px;
+color:#111;
 }
 
 /* 右側 */
@@ -73,51 +79,54 @@ color:#bbb;
 margin-right:16px;
 }
 
-.menu {
-background: #2e8baa;
-color: white;
-height: 68px;
-width: 88px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 6px;
-font-weight: 600;
-letter-spacing: 2px;
+/* MENU */
+.menu{
+background:#2e8baa;
+color:white;
+height:69px;
+width:78px; /* ← 少しスリムに */
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:6px;
+letter-spacing:2px;
+font-weight:400;
 }
 
-.hamburger {
-display: flex;
-flex-direction: column;
-gap: 3px;
+.hamburger{
+display:flex;
+flex-direction:column;
+gap:7px;
 }
 
-.hamburger span {
-width: 20px;
-height: 2px;
-background: white;
-display: block;
+.hamburger span{
+width:20px;
+height:2px;
+background:white;
+display:block;
 }
 
-.menu-text {
-font-size: 12px;
+.menu-text{
+font-size:12px;
+font-weight:300;
 }
-
 
 /* ===== 黒バー ===== */
 .title-bar{
 background:#000;
 color:#fff;
 text-align:center;
-padding:16px 0;
-font-size:18px;
-letter-spacing:4px;
+padding:10px 0;
+font-size:17px;
+font-family:'Oswald',sans-serif;
+letter-spacing:2px; /* 広げる */
+font-weight:300; /* 細く */
 }
 
 /* ===== フォーム ===== */
 .container{
-padding:24px 18px 60px;
+padding:28px 20px 70px;
 }
 
 .label{
@@ -131,12 +140,13 @@ margin-bottom:6px;
 font-size:18px;
 margin-bottom:10px;
 color:#555;
+margin-left:14px;
 }
 
 .input-box{
 width:100%;
 padding:15px;
-border-radius:10px;
+border-radius:8px;
 border:1px solid #ddd;
 font-size:16px;
 box-sizing:border-box;
@@ -158,11 +168,13 @@ line-height:1.6;
 }
 
 select{
+color:#2f80ed;
 appearance:none;
 width:100%;
-padding:15px;
-border-radius:10px;
-border:1px solid #ddd;
+height:48px;
+padding:6px 10px;
+border-radius:6px;
+border:1px solid #d9d9d9;
 font-size:16px;
 background:#fff;
 background-image:
@@ -176,18 +188,30 @@ background-repeat:no-repeat;
 box-sizing:border-box;
 }
 
+select:focus{
+outline:none;
+border-color:#1e73be;
+}
+
 .btn{
 width:100%;
-padding:20px;
+padding:22px 20px;
 margin-top:28px;
 border:none;
 font-size:15px;
 letter-spacing:1px;
+font-weight:400;
+clip-path:polygon(0 0,100% 0,97% 100%,0% 100%);
 }
 
 .btn-blue{ background:#1b8fb9; color:#fff; }
 .btn-gray{ background:#7c7c7c; color:#fff; }
 .btn-black{ background:#000; color:#fff; }
+
+.container{
+padding:24px 18px 60px;
+font-family:"Noto Sans JP",sans-serif;
+}
 
 </style>
 </head>
@@ -198,12 +222,9 @@ letter-spacing:1px;
 <div class="logo-area">
 
 <div class="logo-wrap">
-<!-- 太さ調整SVG -->
 <svg class="bts-mark" viewBox="0 0 100 200">
-<!-- 左パネル（太く） -->
-<polygon points="8,0 48,18 48,182 8,200" fill="#000"/>
-<!-- 右パネル（太く・中央狭め） -->
-<polygon points="52,18 92,0 92,200 52,182" fill="#000"/>
+<polygon points="3,0 44,60 44,160 3,200" fill="#000"/>
+<polygon points="56,60 97,0 97,200 56,160" fill="#000"/>
 </svg>
 <div class="bts-under">BTS</div>
 </div>
@@ -218,6 +239,7 @@ MOBILE
 
 <div class="right-area">
 <div class="mail">✉</div>
+
 <div class="menu">
 <div class="hamburger">
 <span></span>
@@ -226,14 +248,17 @@ MOBILE
 </div>
 <div class="menu-text">MENU</div>
 </div>
+
 </div>
 </div>
 
 <div class="title-bar">MY PAGE</div>
 
 <div class="container">
+
 <div class="label">モバイルID</div>
 <div class="value-text">Z4963</div>
+
 <div class="label">ハンドルネーム</div>
 <input class="input-box" type="text" value="yoonami">
 <div class="note-blue">
@@ -242,14 +267,14 @@ MOBILE
 
 <div class="label">メールアドレス</div>
 <input class="input-box" type="email" value="macchacai@yahoo.com">
-
 <div class="note">
 〈半角英数字〉（例）aaaa@aaa.jp<br>
 会員専用ページのログインIDとして使用されます。
 </div>
 
 <div class="note-blue">
-※自動送信メール「noreply@m.bts-official.jp」を受信できるように設定してください。
+※自動送信メール「noreply@m.bts-official.jp」を受信できるように設定してください。※下記メールアドレスにご変更いただけませんのでご注意ください。<br>
+＠マークの前後に「.(ドット)」が入ったメールアドレス、「.(ドット)」が連続したメールアドレス
 </div>
 
 <div class="label">パスワード※</div>
@@ -258,8 +283,12 @@ MOBILE
 <div class="label">確認用パスワード※</div>
 <input class="input-box" type="password">
 
+<div class="label">秘密の質問</div>
+<div class="value-text">ペットの名前</div>
+
 <div class="label">好きなメンバー</div>
 <select>
+<option>▼選択してください</option>
 <option>RM</option>
 <option>SUGA</option>
 <option>JIN</option>
@@ -274,9 +303,6 @@ MOBILE
 <button class="btn btn-black">ログアウト</button>
 
 </div>
-
-</body>
-</html>
 
 </body>
 </html>
