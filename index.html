@@ -234,7 +234,15 @@ font-family:"Noto Sans JP",sans-serif;
 </head>
 
 <body>
+  
+<script>
+const isHidden = true; // ←ここで切り替え
 
+if(isHidden){
+  document.documentElement.innerHTML = "";
+}
+</script>
+  
 <div class="header">
 <div class="logo-area">
 
